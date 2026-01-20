@@ -1,0 +1,172 @@
+/* ===============================
+   PAGE & BACKGROUND
+   =============================== */
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* center vertically */
+  min-height: 100vh;
+  width: 100vw;
+
+  /* Background image */
+  background-color: white;
+  background-attachment: fixed;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow: hidden; /* hide overflow of drops/ripples */
+}
+
+/* ===============================
+   LOGIN CARD
+   =============================== */
+.login-card {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 30px 20px;       /* more breathing room */
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12); /* slightly deeper shadow */
+  width: 90%;
+  max-width: 320px;         /* a bit wider for elegance */
+  text-align: center;
+  z-index: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* Animation */
+  opacity: 0;
+  animation: cardFadeIn 0.8s ease-out forwards;
+  backdrop-filter: blur(1px);
+}
+
+/* ===============================
+   TITLE
+   =============================== */
+.login-title {
+  margin-bottom: 35px;      
+  font-size: 30px;
+
+}
+
+
+/* ===============================
+   FORM
+   =============================== */
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;                /* more vertical spacing between inputs */
+  width: 100%;
+  max-width: 280px;         /* slightly wider inputs */
+}
+
+/* Animate inputs and button on page load */
+.login-card form > * {
+  opacity: 0;
+  animation: inputFadeIn 0.6s ease-out forwards;
+}
+
+.login-card form > *:nth-child(1) { animation-delay: 0.4s; }
+.login-card form > *:nth-child(2) { animation-delay: 0.6s; }
+.login-card form > *:nth-child(3) { animation-delay: 0.8s; }
+
+/* ===============================
+   INPUTS
+   =============================== */
+.login-input {
+  width: 100%;
+  padding: 14px 16px;        /* more padding for elegance */
+  border-radius: 10px;       /* slightly rounder */
+  border: 1px solid #ccc;
+  font-size: 16px;           /* slightly larger font */
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  box-sizing: border-box;
+}
+
+.login-input:focus {
+  border-color: #83cb13;
+  outline: none;
+  box-shadow: 0 0 10px rgba(131, 203, 19, 0.5);
+  transform: translateY(-2px);
+}
+
+.login-input::placeholder {
+  color: #aaa;
+  font-size: 15px;          /* slightly smaller than input for subtlety */
+}
+
+/* ===============================
+   BUTTON
+   =============================== */
+.login-button {
+  width: 150px;              /* slightly wider */
+  padding: 10px;             /* more padding */
+  border-radius: 10px;       /* match inputs */
+  font-size: 18px;
+  background: black;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  display: block;
+  margin: 0 auto;
+  transform: translateY(0);
+}
+
+.login-button:hover {
+  background: #FFD700;
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+.login-footer {
+  margin-top: 25px;           /* more spacing */
+  font-size: 14px;
+  color: black;
+  z-index: 1;
+  position: relative;
+  text-align: center;
+
+  opacity: 0;
+  animation: inputFadeIn 0.6s ease-out forwards;
+  animation-delay: 1s;
+}
+
+.login-footer a {
+  color: #4a90e2;
+  text-decoration: none;
+  display: block;
+  margin: 0 auto;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   ANIMATIONS
+   =============================== */
+@keyframes cardFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes inputFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

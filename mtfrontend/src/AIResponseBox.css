@@ -1,0 +1,72 @@
+.response-container {
+  padding: 40px; /* Space for the overlapping buttons */
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ai-box {
+  position: relative; /* Essential for absolute positioning of buttons */
+  background-color: #1e1f20;
+  border: 1px solid #444746;
+  border-radius: 12px;
+  padding: 20px;
+  color: #e3e3e3;
+  line-height: 1.6;
+}
+
+.ai-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-weight: bold;
+  color: #a8c7fa;
+}
+
+/* Base style for all circle buttons */
+.border-btn {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #333537;
+  border: 1px solid #444746;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.border-btn:hover {
+  background-color: #444746;
+  transform: scale(1.1) translate(-50%, -50%); /* Adjust scale while keeping center */
+  border-color: #a8c7fa;
+}
+
+/* Positioning logic */
+.btn-left {
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn-right {
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
+}
+
+.btn-bottom {
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+/* Adjust hover specifically for bottom to prevent jitter */
+.btn-bottom:hover {
+    transform: scale(1.1) translate(-50%, 40%);
+}
