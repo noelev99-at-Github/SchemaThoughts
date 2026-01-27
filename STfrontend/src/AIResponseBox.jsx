@@ -1,10 +1,9 @@
-import React from 'react';
-import './AIResponseBox.css';
+import React from "react";
+import "./AIResponseBox.css";
 
 const AIResponseBox = ({ message }) => {
   return (
     <div className="response-container">
-      {/* The main AI message box */}
       <div className="ai-box">
         <div className="ai-header">
           <span className="ai-icon">✨</span>
@@ -15,9 +14,15 @@ const AIResponseBox = ({ message }) => {
         </div>
 
         {/* Action Buttons on borders */}
-        <button className="border-btn btn-left" title="Add left">+</button>
-        <button className="border-btn btn-right" title="Add right">+</button>
-        <button className="border-btn btn-bottom" title="Add below">+</button>
+        <button className="border-btn btn-left" title="Add left">
+          +
+        </button>
+        <button className="border-btn btn-right" title="Add right">
+          +
+        </button>
+        <button className="border-btn btn-bottom" title="Add below">
+          +
+        </button>
       </div>
     </div>
   );

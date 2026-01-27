@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import "./Dashboard.css";
 import axios from "axios";
+import AIResponseBox from "./AIResponseBox.jsx";
 
 function CreateMapForm({ onClose }) {
   const [mapName, setMapName] = useState("");
   const handleSubmit = async (e) => {
+    e.preventDefault(); // Add this to prevent page reload
     
     try {
       const response = await axios.post(
@@ -101,7 +103,8 @@ function Dashboard() {
             <header>
             </header>
             <div className="content-body">
-            
+            <AIResponseBox message="Hello World" />
+            <AIResponseBox message="Hello World" />
             </div>
         </main>
 

@@ -1,8 +1,0 @@
-fastapi
-uvicorn[standard]
-pydantic
-passlib[bcrypt]
-sqlalchemy
-aiosqlite
-python-dotenv
-itsdangerous

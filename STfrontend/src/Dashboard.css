@@ -79,15 +79,19 @@
   gap: 12px;
   transition: background 0.2s;
   margin-bottom: 4px;
-}
 
+  overflow: hidden; /* 👈 important */
+}
 .topic-item:hover {
   background-color: #2d2f31;
 }
-
 .topic-text {
   font-size: 0.9rem;
   color: #e3e3e3;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .sidebar-footer {
@@ -102,7 +106,8 @@
   cursor: pointer;
   transition: background 0.2s;
   display: flex;
-  align-items: center;
+  align-items: center;      /* vertical */
+  justify-content: center;  /* horizontal */
   gap: 10px;
 }
 
